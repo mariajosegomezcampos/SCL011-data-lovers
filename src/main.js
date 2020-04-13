@@ -55,6 +55,42 @@ cards(data);
 
 });  
 
+ //FUNCION FILTRAR
+// 1 Le asigno un evento al select
+// 2 defino mi condicion,que sera el valor que seleccione el usuario en el select 
+
+filterSpecies.addEventListener('change', () => {
+  let condition = filterSpecies.options[filterSpecies.selectedIndex].value;
+  let speciesResult = window.filter.species(data,condition);
+ //  console.log(speciesResult)
+  contenedorPersonajes.innerHTML = " ";
+ cards(speciesResult);
+  });
+ 
+  /* funcion orden */
+ 
+  const orderSelector = document.getElementById("orderSelector");
+  orderSelector.addEventListener('change', () => {
+ 
+   let sortOrder = orderSelector.options[orderSelector.selectedIndex].value;
+   let orderResult = window.sort.order(data,sortOrder);
+ 
+  document.getElementById("printScreenCharacters").innerHTML="";
+  const finalOrder = orderResult.map((show)=>{
+ 
+      contenedorPersonajes.innerHTML += 
+    `<div class ="card">
+      <img src="${show.image}" alt="imgCharacter">
+      <h3>${show.name}</h3>
+     <p>${show.status}</p>
+     <p>${show.gender}</p>
+  </div>`
+  });
+  cards(finalOrder);
+  });
+ 
+ 
+
 
 
 
