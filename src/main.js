@@ -30,6 +30,19 @@ function cards(data){
   
   } 
 
+  // FUNCION MOSTRAR PERSONAJES 
+const characters = document.getElementById("characters");
+characters.addEventListener("click", ()=>{
+
+contentWelcome.style.display="none"
+select.style.display="block"
+textoSelect.style.display = "block";
+contenedorPersonajes.innerHTML = " ";
+
+cards(data); 
+
+});  
+
 
 
 
