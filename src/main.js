@@ -31,7 +31,7 @@ function cards(data){
   } 
 
   // FUNCION MOSTRAR PERSONAJES 
-const characters = document.getElementById("characters");
+const characters= document.getElementById("characters");
 characters.addEventListener("click", ()=>{
 
 contentWelcome.style.display="none"
@@ -42,18 +42,19 @@ contenedorPersonajes.innerHTML = " ";
 cards(data); 
 
 });  
-// FUNCION MOSTRAR PERSONAJES 
-const characters = document.getElementById("characters");
-characters.addEventListener("click", ()=>{
 
-contentWelcome.style.display="none"
-select.style.display="block"
-textoSelect.style.display = "block";
-contenedorPersonajes.innerHTML = " ";
+// //FUNCION VOLVER AL INICIO
+const start = document.getElementById("start");
+start.addEventListener("click", ()=>{
+contenedorPersonajes.innerHTML =" ";
+contentWelcome.style.display="block"
+contenedorPersonajes.style.display= "none";
+select.style.display= "none";
+textoSelect.style.display = "none";
 
-cards(data); 
 
-});  
+});
+
 
  //FUNCION FILTRAR
 // 1 Le asigno un evento al select
